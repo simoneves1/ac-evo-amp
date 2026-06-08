@@ -53,3 +53,14 @@ Example used by this template:
 
 - This repository is now ACEVO-only (ETS2/ATS files removed).
 - Keep config and update values aligned with the current official Assetto Corsa EVO dedicated server release on Steam.
+
+## Troubleshooting
+
+If AMP logs `exit code -1 (CATASTROPHIC_FAILURE)` right after start:
+
+1. In the instance, run an update first and confirm SteamCMD download succeeds.
+2. Confirm the executable path resolves to a real file in `App.BaseDirectory`.
+3. Re-check app IDs and Steam login mode:
+	- Dedicated server app id: `4564210`
+	- `App.SteamUpdateAnonymousLogin=False`
+4. If the instance was created before these template fixes, create a new instance from refreshed templates.
