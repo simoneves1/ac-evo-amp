@@ -3,7 +3,7 @@
         "ConfigFile": "Assetto Corsa EVO/server_config.sii",
         "AutoMap": true,
         "ConfigType": "template",
-        "ConfigFileTemplate": "assetto-corsa-evo/AMP_server_config.sii"
+        "ConfigFileTemplate": "assetto-corsa-evo.sii"
     }
 ]
 

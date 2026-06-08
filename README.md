@@ -16,6 +16,8 @@ Custom AMP Generic Module template scaffold for Assetto Corsa EVO dedicated serv
 
 You must replace placeholder values inherited from generic scaffolding:
 
+Prerequisite: You must own Assetto Corsa EVO on the Steam account used by AMP, and AMP/SteamCMD must be able to log in to Steam for installs and updates.
+
 1. In assetto-corsa-evo.kvp:
 - Meta.URL
 - Meta.DisplayImageSource
@@ -27,7 +29,8 @@ You must replace placeholder values inherited from generic scaffolding:
 2. In assetto-corsa-evoupdates.json:
 - UpdateSourceData (dedicated server Steam App ID)
 - UpdateSourceArgs (client/game App ID if required by your flow)
-- Settings template URL if you host a remote config template
+
+The server config template is bundled locally (`assetto-corsa-evo.sii`) so updates do not depend on a remote URL.
 
 ## Add Template To AMP
 
