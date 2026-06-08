@@ -1,0 +1,45 @@
+﻿[
+    {
+        "UpdateStageName": "SteamCMD Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "SET_ME_DEDICATED_SERVER_APP_ID",
+        "UpdateSourceArgs": "SET_ME_CLIENT_APP_ID",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UpdateSourceVersion": "public",
+        "UpdateSourceConditionSetting": "InstallBeta",
+        "UpdateSourceConditionValue": "false",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "SteamCMD Download (Beta)",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "SET_ME_DEDICATED_SERVER_APP_ID",
+        "UpdateSourceArgs": "SET_ME_CLIENT_APP_ID",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
+        "UpdateSourceVersion": "{{BetaBranch}}",
+        "UpdateSourceConditionSetting": "InstallBeta",
+        "UpdateSourceConditionValue": "true",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Settings Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}Assetto Corsa EVO",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Settings Template Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://raw.githubusercontent.com/CubeCoders/AMPTemplates/main/assetto-corsa-evo.sii",
+        "UpdateSourceArgs": "AMP_server_config.sii",
+        "UpdateSourceTarget": "{{$FullRootDir}}",
+        "OverwriteExistingFiles": true,
+        "SkipOnFailure": false
+    }
+]
+
+
