@@ -2,8 +2,6 @@
 
 Custom AMP Generic Module template scaffold for Assetto Corsa EVO dedicated server hosting.
 
-This project was cloned from your ETS2 template and cleaned to keep only ACEVO files.
-
 ## Files
 
 - assetto-corsa-evo.kvp
@@ -35,9 +33,21 @@ You must replace placeholder values inherited from generic scaffolding:
 
 1. Open AMP ADS panel.
 2. Go to Configuration, then Instance Deployment.
-3. Add your repository or copy these files into your AMP datastore templates path.
-4. Fetch templates.
-5. Create a new Generic Module instance from this template.
+3. In template/app repository sources, add this source:
+	- simoneves1/ac-evo-amp:main
+4. Save/apply changes.
+5. Fetch or refresh templates.
+6. Create a new Generic Module instance from this template.
+
+### AMP Source Format
+
+Use this format when adding a GitHub source in AMP:
+
+- owner/repository:branch
+
+Example used by this template:
+
+- simoneves1/ac-evo-amp:main
 
 ## Notes
 

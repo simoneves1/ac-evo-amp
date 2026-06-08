@@ -20,7 +20,7 @@ Meta.ExtraContainerPackages=[]
 Meta.ConfigReleaseState=NotSpecified
 Meta.NoCommercialUsage=False
 Meta.ConfigVersion=3
-Meta.AppConfigId=bc22b6b2-9ca4-47bd-8e8f-edc6fc6c5454
+Meta.AppConfigId=ee154868-2ae7-4d64-816f-1fb5e376a346
 
 App.DisplayName=Assetto Corsa EVO
 App.RootDir=./assetto-corsa-evo/
