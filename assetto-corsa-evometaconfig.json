@@ -3,7 +3,7 @@
         "ConfigFile": "server_config.json",
         "AutoMap": true,
         "ConfigType": "template",
-        "ConfigFileTemplate": "assetto-corsa-evo-server_config.json"
+        "ConfigFileTemplate": "server_config.json"
     }
 ]
 

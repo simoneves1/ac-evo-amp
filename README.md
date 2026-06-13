@@ -7,7 +7,7 @@ Custom AMP Generic Module template for Assetto Corsa EVO dedicated server hostin
 - assetto-corsa-evo.kvp
 - assetto-corsa-evoconfig.json
 - assetto-corsa-evometaconfig.json
-- assetto-corsa-evo-server_config.json
+- server_config.json
 - assetto-corsa-evoports.json
 - assetto-corsa-evoupdates.json
 - manifest.json
@@ -21,7 +21,7 @@ This template launches `AssettoCorsaEVOServer.exe` directly with:
 - `-configjson "{{$FullBaseDir}}server_config.json"`
 - `-seasonjson "{{$FullBaseDir}}{{SeasonJsonFile}}"`
 
-The managed server config is generated from `assetto-corsa-evo-server_config.json`.
+The managed server config is generated from `server_config.json`.
 
 ## Add Template To AMP
 
