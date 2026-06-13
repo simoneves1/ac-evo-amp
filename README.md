@@ -47,12 +47,14 @@ The template now includes an `Advanced` section in AMP configuration.
 - `Netcode Update Interval`: maps to `netcode_update_interval`
 - `PI Minimum` and `PI Maximum`: map to `pi_min` and `pi_max`
 - `Tuning Type`: maps to `tuning_type`
-- `Allowed Cars JSON`: raw JSON array for `allowed_cars_list_full`
+- `Allowed Cars Preset`: dropdown that writes a multi-car JSON array into `allowed_cars_list_full`
 - `Property 1 JSON`, `Property 2 JSON`, `Property 3 JSON`: raw JSON arrays for server properties
 - `Entry List Server URL` and `Entry List Path`: map to entry list fields
 - `Results POST URL` and `Results Path`: control result upload endpoint and local output path
 
-For all `* JSON` fields, keep the value valid JSON (for example `[]` or `[{"car_name":"preset_695b_mech_1","ballast":0,"restrictor":0}]`).
+`Season JSON File` is now also a dropdown with built-in options for practice and race weekend event sets.
+
+AMP Generic Module templates do not expose a true multi-select dropdown control. The `Allowed Cars Preset` dropdown is the supported workaround to select multiple cars in one choice.
 
 ### AMP Source Format
 

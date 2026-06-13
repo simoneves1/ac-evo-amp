@@ -125,16 +125,18 @@
         "DisplayName": "Season JSON File",
         "Category": "Assetto Corsa EVO:flag",
         "Subcategory": "Session Flow:repeat:3",
-        "Description": "Relative file path in the server base directory used with -seasonjson.",
+        "Description": "Select the season file passed to -seasonjson.",
         "Keywords": "season,json,file",
         "FieldName": "SeasonJsonFile",
-        "InputType": "text",
+        "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "SeasonJsonFile",
         "IncludeInCommandLine": false,
         "DefaultValue": "events_practice.json",
-        "Placeholder": "events_practice.json",
-        "EnumValues": {}
+        "EnumValues": {
+            "Practice Events": "events_practice.json",
+            "Race Weekend Events": "events_race_weekend.json"
+        }
     },
     {
         "DisplayName": "Game TCP Port",
@@ -240,19 +242,24 @@
         "EnumValues": {}
     },
     {
-        "DisplayName": "Allowed Cars JSON",
+        "DisplayName": "Allowed Cars Preset",
         "Category": "Assetto Corsa EVO:flag",
         "Subcategory": "Advanced:sliders:5",
-        "Description": "Raw JSON array for allowed_cars_list_full. Keep valid JSON.",
-        "Keywords": "cars,allowed,json",
+        "Description": "Select a multi-car preset. This writes allowed_cars_list_full as JSON.",
+        "Keywords": "cars,allowed,preset",
         "FieldName": "allowed_cars_list_full_json",
-        "InputType": "Textarea",
+        "InputType": "enum",
         "IsFlagArgument": false,
         "ParamFieldName": "allowed_cars_list_full_json",
         "IncludeInCommandLine": false,
         "DefaultValue": "[]",
-        "Placeholder": "[]",
-        "EnumValues": {}
+        "EnumValues": {
+            "All Cars (No Filter)": "[]",
+            "Road Starters Pack": "[{\"car_name\":\"preset_695b_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_75t_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_a110s_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_m2_mech_1\",\"ballast\":0,\"restrictor\":0}]",
+            "GT Pack": "[{\"car_name\":\"preset_r8gt3_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_r8gt4_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_m4gt3_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_m2csr_mech_2\",\"ballast\":0,\"restrictor\":0}]",
+            "BMW Focus Pack": "[{\"car_name\":\"preset_m2_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_m2_mech_2\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_m3evoiii_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_e46csl_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"preset_m4csl_mech_1\",\"ballast\":0,\"restrictor\":0}]",
+            "Caterham Pack": "[{\"car_name\":\"ks_caterham_485_csr_mech_1\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"ks_caterham_485_csr_mech_2\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"ks_caterham_485_csr_mech_3\",\"ballast\":0,\"restrictor\":0},{\"car_name\":\"ks_caterham_acmd_mech_1\",\"ballast\":0,\"restrictor\":0}]"
+        }
     },
     {
         "DisplayName": "Property 1 JSON",
