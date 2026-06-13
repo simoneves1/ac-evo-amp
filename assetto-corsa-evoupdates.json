@@ -6,7 +6,6 @@
         "UpdateSourceData": "4564210",
         "UpdateSourceArgs": "",
         "UpdateSourceTarget": "{{$FullBaseDir}}",
-        "UpdateSourceVersion": "public",
         "UpdateSourceConditionSetting": "InstallBeta",
         "UpdateSourceConditionValue": "false",
         "SkipOnFailure": false
@@ -24,10 +23,10 @@
         "SkipOnFailure": false
     },
     {
-        "UpdateStageName": "Settings Directory Creation",
+        "UpdateStageName": "Results Directory Creation",
         "UpdateSourcePlatform": "All",
         "UpdateSource": "CreateDirectory",
-        "UpdateSourceArgs": "{{$FullBaseDir}}Assetto Corsa EVO",
+        "UpdateSourceArgs": "{{$FullBaseDir}}results",
         "SkipOnFailure": false
     }
 ]

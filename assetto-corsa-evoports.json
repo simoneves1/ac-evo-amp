@@ -1,17 +1,24 @@
 ﻿[
     {
-        "Protocol": "UDP",
-        "Port": "27015",
-        "Name": "Main Server Port",
-        "Description": "Primary port used for game traffic. Forward this port in your router/firewall.",
-        "Ref": "MainServerPort"
+        "Protocol": "TCP",
+        "Port": "9700",
+        "Name": "Game TCP Port",
+        "Description": "Primary TCP listener used by AC EVO dedicated server.",
+        "Ref": "GameTcpPort"
     },
     {
         "Protocol": "UDP",
-        "Port": "27016",
-        "Name": "Query Dedicated Port",
-        "Description": "Port used for Steam server queries and the server browser.",
-        "Ref": "QueryDedicatedPort"
+        "Port": "9700",
+        "Name": "Game UDP Port",
+        "Description": "Primary UDP listener used by AC EVO dedicated server.",
+        "Ref": "GameUdpPort"
+    },
+    {
+        "Protocol": "TCP",
+        "Port": "8080",
+        "Name": "HTTP Port",
+        "Description": "HTTP endpoint used by the dedicated server.",
+        "Ref": "HttpPort"
     }
 ]
 

@@ -1,36 +1,27 @@
 # Assetto Corsa EVO - AMP Template
 
-Custom AMP Generic Module template scaffold for Assetto Corsa EVO dedicated server hosting.
+Custom AMP Generic Module template for Assetto Corsa EVO dedicated server hosting using the headless server binary.
 
 ## Files
 
 - assetto-corsa-evo.kvp
 - assetto-corsa-evoconfig.json
 - assetto-corsa-evometaconfig.json
+- assetto-corsa-evo-server_config.json
 - assetto-corsa-evoports.json
 - assetto-corsa-evoupdates.json
-- assetto-corsa-evo.sii
 - manifest.json
 
 ## Before Using In AMP
 
-You must replace placeholder values inherited from generic scaffolding:
-
 Prerequisite: You must own Assetto Corsa EVO on the Steam account used by AMP, and AMP/SteamCMD must be able to log in to Steam for installs and updates.
 
-1. In assetto-corsa-evo.kvp:
-- Meta.URL
-- Meta.DisplayImageSource
-- App.BaseDirectory
-- App.ExecutableWin
-- App.ExecutableLinux
-- App.EnvironmentVariables SteamAppId
+This template launches `AssettoCorsaEVOServer.exe` directly with:
 
-2. In assetto-corsa-evoupdates.json:
-- UpdateSourceData (dedicated server Steam App ID)
-- UpdateSourceArgs (client/game App ID if required by your flow)
+- `-configjson "{{$FullBaseDir}}server_config.json"`
+- `-seasonjson "{{$FullBaseDir}}{{SeasonJsonFile}}"`
 
-The server config template is bundled locally (`assetto-corsa-evo.sii`) so updates do not depend on a remote URL.
+The managed server config is generated from `assetto-corsa-evo-server_config.json`.
 
 ## Add Template To AMP
 
@@ -41,6 +32,27 @@ The server config template is bundled locally (`assetto-corsa-evo.sii`) so updat
 4. Save/apply changes.
 5. Fetch or refresh templates.
 6. Create a new Generic Module instance from this template.
+
+## Recommended First Start
+
+1. Run Update for the new instance.
+2. In Application Deployment, verify executable is `AssettoCorsaEVOServer.exe`.
+3. In Configuration, keep `Season JSON File` as `events_practice.json` for first boot.
+4. Start the instance and watch console for `Listening to TCP`.
+
+## Advanced Field List
+
+The template now includes an `Advanced` section in AMP configuration.
+
+- `Netcode Update Interval`: maps to `netcode_update_interval`
+- `PI Minimum` and `PI Maximum`: map to `pi_min` and `pi_max`
+- `Tuning Type`: maps to `tuning_type`
+- `Allowed Cars JSON`: raw JSON array for `allowed_cars_list_full`
+- `Property 1 JSON`, `Property 2 JSON`, `Property 3 JSON`: raw JSON arrays for server properties
+- `Entry List Server URL` and `Entry List Path`: map to entry list fields
+- `Results POST URL` and `Results Path`: control result upload endpoint and local output path
+
+For all `* JSON` fields, keep the value valid JSON (for example `[]` or `[{"car_name":"preset_695b_mech_1","ballast":0,"restrictor":0}]`).
 
 ### AMP Source Format
 
@@ -55,15 +67,18 @@ Example used by this template:
 ## Notes
 
 - This repository is now ACEVO-only (ETS2/ATS files removed).
-- Keep config and update values aligned with the current official Assetto Corsa EVO dedicated server release on Steam.
+- The dedicated server app id is `4564210`.
+- The server binary supports gflags CLI options including `-configjson` and `-seasonjson`, which this template uses.
+- Default exposed ports in this template are TCP `9700`, UDP `9700`, and TCP `8080`.
 
 ## Troubleshooting
 
 If AMP logs `exit code -1 (CATASTROPHIC_FAILURE)` right after start:
 
 1. In the instance, run an update first and confirm SteamCMD download succeeds.
-2. Confirm the executable path resolves to a real file in `App.BaseDirectory`.
+2. Confirm the executable path resolves to `AssettoCorsaEVOServer.exe` in `App.BaseDirectory`.
 3. Re-check app IDs and Steam login mode:
 	- Dedicated server app id: `4564210`
 	- `App.SteamUpdateAnonymousLogin=False`
-4. If the instance was created before these template fixes, create a new instance from refreshed templates.
+4. Confirm `Season JSON File` points to an existing file (for example `events_practice.json`) in the server base directory.
+5. If the instance was created before these template fixes, create a new instance from refreshed templates.
